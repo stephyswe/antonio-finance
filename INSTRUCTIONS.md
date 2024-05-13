@@ -63,6 +63,13 @@ bun add @hono/clerk-auth@^2.0.0 @clerk/backend@^1.1.1
 CLERK_PUBLISHABLE_KEY=
 ```
 
+### Header component
+
+```
+bunx shadcn-ui@latest add sheet
+bun add react-use@^17.5.0
+``` 
+
 ### Deployment
 
 foreach
