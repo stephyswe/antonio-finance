@@ -33,15 +33,34 @@ bunx shadcn-ui@latest add button
 bun add @clerk/nextjs@5.0.6
 clerk.com - login - create app: "antonio-finance-clone" - "remove email option" - create application
 copy API KEYS to .env.local
-clerk.com - app - customization - branding - hide clerk branding - 
+clerk.com - app - customization - branding - hide clerk branding
 ```
 
-.env
+.env.local
 ```
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
 NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+```
+
+### Hono.js Setup
+
+```
+bun add hono@^4.3.2 @hono/zod-validator@^0.2.1 zod@^3.23.6
+.
+https://hono.dev/getting-started/vercel
+https://hono.dev/guides/rpc
+https://hono.dev/middleware/third-party
+https://hono.dev/guides/best-practices
+.
+[clerk middleware for hono](https://github.com/honojs/middleware/tree/main/packages/clerk-auth)
+bun add @hono/clerk-auth@^2.0.0 @clerk/backend@^1.1.1
+```
+
+.env.local
+```
+CLERK_PUBLISHABLE_KEY=
 ```
 
 ### Deployment
