@@ -70,6 +70,37 @@ bunx shadcn-ui@latest add sheet
 bun add react-use@^17.5.0
 ``` 
 
+### Neon & Drizzle
+
+```
+https://neon.tech 
+- create antonio-finance-postgres - "create project"
+
+https://orm.drizzle.team/docs/get-started-postgresql
+
+bun add drizzle-orm@^0.30.10 @neondatabase/serverless@^0.9.3
+bun add -D drizzle-kit@^0.21.1
+
+https://orm.drizzle.team/docs/sql-schema-declaration
+
+bun add -D dotenv@^16.4.5
+
+https://neon.tech/docs/guides/drizzle-migrations#run-the-migration
+
+bun run db:generate
+bun run db:migrate
+bun run db:studio
+
+https://orm.drizzle.team/docs/rqb#find-first
+or
+https://orm.drizzle.team/docs/select#basic-and-partial-select
+```
+
+.env.local
+```
+DATABASE_URL=
+```
+
 ### Deployment
 
 foreach
