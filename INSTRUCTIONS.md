@@ -101,6 +101,24 @@ https://orm.drizzle.team/docs/select#basic-and-partial-select
 DATABASE_URL=
 ```
 
+### Accounts GET API
+
+https://tanstack.com/query/latest/docs/framework/react/installation
+https://hono.dev/guides/rpc#using-rpc-with-larger-applications
+
+```
+bun add @tanstack/react-query@^5.35.1
+
+https://tanstack.com/query/latest/docs/framework/react/guides/advanced-ssr#advanced-server-rendering
+
+http://localhost:3000/api/accounts
+```
+
+.env.local
+```
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
+
 ### Deployment
 
 foreach
