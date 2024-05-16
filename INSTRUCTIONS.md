@@ -119,6 +119,13 @@ http://localhost:3000/api/accounts
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
+### Accounts POST API
+
+```
+bun add drizzle-zod@^0.5.1 @paralleldrive/cuid2@^2.2.2 zustand@^4.5.2
+bunx shadcn-ui@latest add form input sonner
+```
+
 ### Deployment
 
 foreach
