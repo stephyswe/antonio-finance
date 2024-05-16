@@ -126,6 +126,19 @@ bun add drizzle-zod@^0.5.1 @paralleldrive/cuid2@^2.2.2 zustand@^4.5.2
 bunx shadcn-ui@latest add form input sonner
 ```
 
+### Datatable component
+
+```
+bun add @tanstack/react-table@^8.16.0
+bunx shadcn-ui@latest add card table checkbox
+
+https://ui.shadcn.com/docs/components/data-table#column-definitions
+https://ui.shadcn.com/docs/components/data-table#pagination
+https://ui.shadcn.com/docs/components/data-table#sorting
+https://ui.shadcn.com/docs/components/data-table#filtering
+https://ui.shadcn.com/docs/components/data-table#row-selection
+```
+
 ### Deployment
 
 foreach
