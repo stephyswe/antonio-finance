@@ -139,6 +139,16 @@ https://ui.shadcn.com/docs/components/data-table#filtering
 https://ui.shadcn.com/docs/components/data-table#row-selection
 ```
 
+### Accounts bulk delete
+
+```
+https://github.com/honojs/hono/releases/tag/v4.3.0
+
+bunx shadcn-ui@latest add skeleton
+
+https://medium.com/@kch062522/useconfirm-a-custom-react-hook-to-prompt-confirmation-before-action-f4cb746ebd4e
+```
+
 ### Deployment
 
 foreach
