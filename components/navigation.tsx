@@ -47,18 +47,8 @@ const Navigation = () => {
   if (isMobile) {
     return (
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetTrigger>
-          <Button
-            asChild
-            variant="outline"
-            size="sm"
-            className="font-normal bg-white/10 hover:bg-white/20
-             hover:text-white border-none focus-visible:ring-offset-0 
-             focus-visible:ring-transparent outline-none text-white
-             focus:bg-white/30 transition"
-          >
-            <Menu className="size-4" />
-          </Button>
+        <SheetTrigger className="p-2 rounded-lg font-normal bg-white/10 hover:bg-white/20 hover:text-white border-none focus-visible:ring-offset-0 focus-visible:ring-transparent outline-none text-white focus:bg-white/30 transition">
+          <Menu className="size-4" />
         </SheetTrigger>
         <SheetContent side="left" className="px-2">
           <nav className="flex flex-col gap-y-2 pt-6">
@@ -67,7 +57,7 @@ const Navigation = () => {
                 key={route.href}
                 variant={route.href === pathname ? "secondary" : "ghost"}
                 onClick={() => onClick(route.href)}
-                className='w-full justify-start'
+                className="w-full justify-start"
               >
                 {route.label}
               </Button>
