@@ -160,6 +160,8 @@ bunx shadcn-ui@latest add dropdown-menu
 commit: get with id
 
 commit: patch with edit
+
+commit: delete with id
 ```
 
 ### Deployment
