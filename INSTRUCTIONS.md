@@ -156,6 +156,10 @@ http://localhost:3000/api/accounts - get one id
 http://localhost:3000/api/accounts/:id
 
 bunx shadcn-ui@latest add dropdown-menu
+
+commit: get with id
+
+commit: patch with edit
 ```
 
 ### Deployment
