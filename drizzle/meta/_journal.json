@@ -15,6 +15,13 @@
       "when": 1715606743265,
       "tag": "0001_nasty_venom",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1715932020012,
+      "tag": "0002_huge_deathbird",
+      "breakpoints": true
     }
   ]
 }

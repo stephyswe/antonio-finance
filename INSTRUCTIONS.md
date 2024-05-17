@@ -164,6 +164,14 @@ commit: patch with edit
 commit: delete with id
 ```
 
+### Categories (API + UI)
+
+```
+bun run db:generate
+bun run db:migrate
+bun run db:studio
+```
+
 ### Deployment
 
 foreach
