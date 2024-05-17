@@ -149,6 +149,15 @@ bunx shadcn-ui@latest add skeleton
 https://medium.com/@kch062522/useconfirm-a-custom-react-hook-to-prompt-confirmation-before-action-f4cb746ebd4e
 ```
 
+### Accounts edit
+
+```
+http://localhost:3000/api/accounts - get one id
+http://localhost:3000/api/accounts/:id
+
+bunx shadcn-ui@latest add dropdown-menu
+```
+
 ### Deployment
 
 foreach
