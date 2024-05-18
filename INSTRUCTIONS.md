@@ -172,6 +172,22 @@ bun run db:migrate
 bun run db:studio
 ```
 
+### Transactions API
+
+```
+https://orm.drizzle.team/docs/rqb#one-to-many
+
+bun run db:generate
+bun run db:migrate
+bun run db:studio
+
+bun add date-fns@^3.6.0
+
+https://orm.drizzle.team/docs/delete#with-delete-clause
+
+
+```
+
 ### Deployment
 
 foreach
