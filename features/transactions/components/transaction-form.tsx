@@ -13,6 +13,8 @@ import {
   FormItem,
   FormLabel,
 } from "@/components/ui/form";
+import { DatePicker } from "@/components/date-picker";
+import { Input } from "@/components/ui/input";
 
 const formSchema = z.object({
   date: z.coerce.date(),
@@ -74,6 +76,22 @@ export const TransactionForm = ({
         className="space-y-4 pt-4"
       >
         <FormField
+          name="date"
+          control={form.control}
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <DatePicker
+                  value={field.value}
+                  onChange={field.onChange}
+                  disabled={disabled}
+                />
+              </FormControl>
+            </FormItem>
+          )}
+        />
+
+        <FormField
           name="accountId"
           control={form.control}
           render={({ field }) => (
@@ -107,6 +125,23 @@ export const TransactionForm = ({
                   value={field.value}
                   onChange={field.onChange}
                   disabled={disabled}
+                />
+              </FormControl>
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          name="payee"
+          control={form.control}
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Payee</FormLabel>
+              <FormControl>
+                <Input
+                  placeholder="Add a payee"
+                  disabled={disabled}
+                  {...field}
                 />
               </FormControl>
             </FormItem>
