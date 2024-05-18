@@ -196,6 +196,16 @@ https://orm.drizzle.team/docs/delete#with-delete-clause
 commit: add features w/i form
 
 bun add react-select@^5.8.0
+
+commit: form with types
+
+commit: create re-usable select
+
+commit: select account & category in transaction form
+
+bunx shadcn-ui@latest add calendar popover
+
+commit: create re-usable datepicker
 ```
 
 ### Deployment
