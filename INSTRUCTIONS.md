@@ -201,11 +201,17 @@ commit: form with types
 
 commit: create re-usable select
 
-commit: select account & category in transaction form
+commit: select account & category in form
 
 bunx shadcn-ui@latest add calendar popover
 
 commit: create re-usable datepicker
+
+commit: payee & datepicker in form
+
+bunx shadcn-ui@latest add textarea
+
+commit: textarea in form
 ```
 
 ### Deployment
