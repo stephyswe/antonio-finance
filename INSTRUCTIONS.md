@@ -212,6 +212,11 @@ commit: payee & datepicker in form
 bunx shadcn-ui@latest add textarea
 
 commit: textarea in form
+
+bun add react-currency-input-field@^3.8.0
+bunx shadcn-ui@latest add tooltip
+
+
 ```
 
 ### Deployment
