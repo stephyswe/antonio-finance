@@ -3,9 +3,12 @@ import { Trash } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
+import { convertAmountToMiliunits } from "@/lib/utils";
+
+import { insertTransactionSchema } from "@/db/schema";
+
 import { Select } from "@/components/select";
 import { Button } from "@/components/ui/button";
-import { insertTransactionSchema } from "@/db/schema";
 import {
   Form,
   FormField,
@@ -15,7 +18,9 @@ import {
 } from "@/components/ui/form";
 import { DatePicker } from "@/components/date-picker";
 import { Input } from "@/components/ui/input";
-import { Textarea } from '@/components/ui/textarea';
+import { Textarea } from "@/components/ui/textarea";
+import { AmountInput } from "@/components/amount-input";
+
 
 const formSchema = z.object({
   date: z.coerce.date(),
@@ -63,7 +68,12 @@ export const TransactionForm = ({
 
   const handleSubmit = (values: FormValues) => {
     console.log({ values });
-    //onSubmit(values);
+    const amount = parseFloat(values.amount);
+    const amountInMiliunits = convertAmountToMiliunits(amount);
+    onSubmit({
+      ...values,
+      amount: amountInMiliunits,
+    });
   };
 
   const handleDelete = () => {
@@ -150,6 +160,23 @@ export const TransactionForm = ({
         />
 
         <FormField
+          name="amount"
+          control={form.control}
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Amount</FormLabel>
+              <FormControl>
+                <AmountInput
+                  {...field}
+                  disabled={disabled}
+                  placeholder="0.00"
+                />
+              </FormControl>
+            </FormItem>
+          )}
+        />
+
+        <FormField
           name="notes"
           control={form.control}
           render={({ field }) => (
@@ -168,7 +195,7 @@ export const TransactionForm = ({
         />
 
         <Button className="w-full" disabled={disabled}>
-          {id ? "Save changes" : "Create account"}
+          {id ? "Save changes" : "Create transaction"}
         </Button>
 
         {!!id && (
@@ -180,7 +207,7 @@ export const TransactionForm = ({
             variant="outline"
           >
             <Trash className="size-4 mr-2" />
-            Delete account
+            Delete transaction
           </Button>
         )}
       </form>
