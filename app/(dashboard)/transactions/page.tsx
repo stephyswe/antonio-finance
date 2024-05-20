@@ -4,24 +4,24 @@ import { Loader2, PlusIcon } from "lucide-react";
 
 import { useNewTransaction } from "@/features/transactions/hooks/use-new-transaction";
 import { useBulkDeleteTransactions } from "@/features/transactions/api/use-bulk-delete";
+import { useGetTransactions } from '@/features/transactions/api/use-get-transactions';
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import { DataTable } from "@/components/data-table";
 
 import { columns } from "./columns";
-import { Skeleton } from "@/components/ui/skeleton";
-import { useGetAccounts } from '@/features/accounts/api/use-get-accounts';
 
 const TransactionsPage = () => {
   const newTransaction = useNewTransaction();
   const deleteTransactions = useBulkDeleteTransactions();
-  const accountsQuery = useGetAccounts();
-  const transactions = accountsQuery.data || [];
+  const transactionsQuery = useGetTransactions();
+  const transactions = transactionsQuery.data || [];
 
-  const isDisabled = accountsQuery.isLoading || deleteTransactions.isPending;
+  const isDisabled = transactionsQuery.isLoading || deleteTransactions.isPending;
 
-  if (accountsQuery.isLoading) {
+  if (transactionsQuery.isLoading) {
     return (
       <div className="max-w-screen-2xl mx-auto w-full pb-10 -mt-24">
         <Card className="border-none drop-shadow-sm">
