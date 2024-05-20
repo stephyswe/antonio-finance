@@ -22,7 +22,7 @@ const formSchema = z.object({
   accountId: z.string(),
   categoryId: z.string().nullable().optional(),
   payee: z.string(),
-  amount: z.number(),
+  amount: z.string(),
   notes: z.string().nullable().optional(),
 });
 
@@ -113,7 +113,7 @@ export const TransactionForm = ({
         />
 
         <FormField
-          name="accountId"
+          name="categoryId"
           control={form.control}
           render={({ field }) => (
             <FormItem>
