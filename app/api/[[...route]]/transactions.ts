@@ -46,7 +46,7 @@ const app = new Hono()
                     payee: transactions.payee,
                     amount: transactions.amount,
                     notes: transactions.notes,
-                    accounts: accounts.name,
+                    account: accounts.name,
                     accountId: transactions.accountId
                 })
                 .from(transactions)
