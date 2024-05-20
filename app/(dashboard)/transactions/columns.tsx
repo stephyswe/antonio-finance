@@ -13,6 +13,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
 
 import { Actions } from "./actions";
+import { AccountColumn } from "./account-column";
 
 export type ResponseType = InferResponseType<
   typeof client.api.transactions.$get,
@@ -130,7 +131,12 @@ export const columns: ColumnDef<ResponseType>[] = [
       );
     },
     cell: ({ row }) => {
-      return <span>{row.original.account}</span>;
+      return (
+        <AccountColumn
+          account={row.original.account}
+          accountId={row.original.accountId}
+        />
+      );
     },
   },
   {
