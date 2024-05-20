@@ -216,7 +216,19 @@ commit: textarea in form
 bun add react-currency-input-field@^3.8.0
 bunx shadcn-ui@latest add tooltip
 
+commit: create re-usable amount input
 
+fix: categoryId & z.string()
+
+commit: onSubmit & amount converter
+```
+
+### Transactions Page
+
+```
+fix: transactions not showing - api
+
+bunx shadcn-ui@latest add badge
 ```
 
 ### Deployment
