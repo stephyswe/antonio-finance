@@ -14,6 +14,7 @@ import { Badge } from "@/components/ui/badge";
 
 import { Actions } from "./actions";
 import { AccountColumn } from "./account-column";
+import { CategoryColumn } from "@/app/(dashboard)/transactions/category-column";
 
 export type ResponseType = InferResponseType<
   typeof client.api.transactions.$get,
@@ -75,7 +76,13 @@ export const columns: ColumnDef<ResponseType>[] = [
       );
     },
     cell: ({ row }) => {
-      return <span>{row.original.category}</span>;
+      return (
+        <CategoryColumn
+          id={row.original.id}
+          category={row.original.category}
+          categoryId={row.original.categoryId}
+        />
+      );
     },
   },
   {

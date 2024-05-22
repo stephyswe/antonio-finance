@@ -228,7 +228,25 @@ commit: onSubmit & amount converter
 ```
 fix: transactions not showing - api
 
+commit: api methods
+
+fix: remove log in transaction-form / features
+
 bunx shadcn-ui@latest add badge
+
+commit: add badge + date column formatter
+
+fix: accounts renamed acount
+
+commit: muliunits in transactions getAll api
+
+commit: add amount in transactions column
+
+commit: add account in transactions column
+
+commit: invalidateQuery "transactions" in account
+
+commit: add category in transactions column + invalidateQueries
 ```
 
 ### Deployment
