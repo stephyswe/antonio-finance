@@ -267,6 +267,8 @@ commit: import-table: render body
 bunx shadcn-ui@latest add select
 
 commit: add shadcn ui select
+
+commit: add table-head-select skeleton in import-table
 ```
 
 ### Deployment
