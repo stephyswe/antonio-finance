@@ -287,6 +287,8 @@ commit: handleContinue with reduce null values
 commit: update csv to current month
 
 commit: summary api
+
+commit: fix - summary.ts lastPeriod variable
 ```
 
 ### Deployment
