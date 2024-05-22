@@ -247,6 +247,8 @@ commit: add account in transactions column
 commit: invalidateQuery "transactions" in account
 
 commit: add category in transactions column + invalidateQueries
+
+commit: enable edit and delete accounts + handle unassigned category
 ```
 
 ### Deployment
