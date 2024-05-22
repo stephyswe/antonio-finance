@@ -3,7 +3,7 @@ import { Hono } from 'hono';
 import { parse, subDays } from 'date-fns';
 import { clerkMiddleware, getAuth } from '@hono/clerk-auth';
 import { zValidator } from '@hono/zod-validator';
-import { and, eq, gte, inArray, lte, desc, sql } from 'drizzle-orm';
+import { and, eq, gte, inArray, desc, sql, lte } from 'drizzle-orm';
 import { createId } from "@paralleldrive/cuid2";
 
 import { db } from '@/db/drizzle';
@@ -27,7 +27,7 @@ const app = new Hono()
             }
 
             const defaultTo = new Date();
-            const defaultFrom = subDays(defaultTo, 300);
+            const defaultFrom = subDays(defaultTo, 30);
 
             const startDate = from
                 ? parse(from, "yyyy-MM-dd", new Date())
@@ -59,7 +59,7 @@ const app = new Hono()
                         accountId ? eq(transactions.accountId, accountId) : undefined,
                         eq(accounts.userId, auth.userId),
                         gte(transactions.date, startDate),
-                        //lte(transactions.date, endDate)
+                        lte(transactions.date, endDate)
                     )
                 )
                 .orderBy(desc(transactions.date))
