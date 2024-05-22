@@ -263,6 +263,10 @@ commit: upload-button (import) & import rendering skeleton
 commit: import card
 
 commit: import-table: render body
+
+bunx shadcn-ui@latest add select
+
+commit: add shadcn ui select
 ```
 
 ### Deployment
