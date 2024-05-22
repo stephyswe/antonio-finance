@@ -271,6 +271,8 @@ commit: add shadcn ui select
 commit: add table-head-select skeleton in import-table
 
 commit: table-head-select functionality in import card
+
+commit: design fix
 ```
 
 ### Deployment
