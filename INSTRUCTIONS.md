@@ -273,6 +273,8 @@ commit: add table-head-select skeleton in import-table
 commit: table-head-select functionality in import card
 
 commit: design fix
+
+commit: handleContinue with reduce null values
 ```
 
 ### Deployment
