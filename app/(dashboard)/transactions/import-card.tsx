@@ -1,3 +1,7 @@
+import { useState } from "react";
+
+import { ImportTable } from '@/app/(dashboard)/transactions/import-table';
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -17,6 +21,13 @@ type Props = {
 };
 
 const ImportCard = ({ data, onCancel, onSubmit }: Props) => {
+  const [selectedColumns, setSelectedColumns] = useState<SelectedColumnsState>(
+    {}
+  );
+
+  const headers = data[0];
+  const body = data.slice(1);
+
   return (
     <Card className="border-none drop-shadow-sm">
       <CardHeader className="gap-y-2 lg:flex-row lg:items-center lg:justify-between">
@@ -29,7 +40,14 @@ const ImportCard = ({ data, onCancel, onSubmit }: Props) => {
           </Button>
         </div>
       </CardHeader>
-      <CardContent>Hello</CardContent>
+      <CardContent>
+        <ImportTable
+          headers={headers}
+          body={body}
+          selectedColumns={selectedColumns}
+          onTableHeadSelectChange={() => {}}
+        />
+      </CardContent>
     </Card>
   );
 };

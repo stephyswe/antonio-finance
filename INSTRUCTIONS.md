@@ -261,6 +261,8 @@ bun add react-papaparse@^4.4.0
 commit: upload-button (import) & import rendering skeleton
 
 commit: import card
+
+commit: import-table: render body
 ```
 
 ### Deployment
