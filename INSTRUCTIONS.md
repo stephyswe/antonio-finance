@@ -253,6 +253,16 @@ commit: enable edit and delete accounts + handle unassigned category
 commit: filter "payee" on transaction page
 ```
 
+### Transactions CSV import
+
+```
+bun add react-papaparse@^4.4.0
+
+commit: upload-button (import) & import rendering skeleton
+
+.
+```
+
 ### Deployment
 
 foreach

@@ -1,25 +1,40 @@
 "use client";
 
+import { useState } from "react";
 import { Loader2, PlusIcon } from "lucide-react";
 
 import { useNewTransaction } from "@/features/transactions/hooks/use-new-transaction";
 import { useBulkDeleteTransactions } from "@/features/transactions/api/use-bulk-delete";
-import { useGetTransactions } from '@/features/transactions/api/use-get-transactions';
+import { useGetTransactions } from "@/features/transactions/api/use-get-transactions";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { DataTable } from "@/components/data-table";
 
+import { UploadButton } from "./upload-button";
 import { columns } from "./columns";
 
+enum VARIANTS {
+  LIST = "LIST",
+  IMPORT = "IMPORT",
+}
+
+const INITIAL_IMPORT_RESULTS = {
+  data: [],
+  errors: [],
+  meta: {},
+};
+
 const TransactionsPage = () => {
+  const [variant, setVariant] = useState<VARIANTS>(VARIANTS.LIST);
   const newTransaction = useNewTransaction();
   const deleteTransactions = useBulkDeleteTransactions();
   const transactionsQuery = useGetTransactions();
   const transactions = transactionsQuery.data || [];
 
-  const isDisabled = transactionsQuery.isLoading || deleteTransactions.isPending;
+  const isDisabled =
+    transactionsQuery.isLoading || deleteTransactions.isPending;
 
   if (transactionsQuery.isLoading) {
     return (
@@ -38,15 +53,28 @@ const TransactionsPage = () => {
     );
   }
 
+  if (variant === VARIANTS.IMPORT) {
+    return (
+      <>
+        <div>This is a screen for import</div>
+      </>
+    );
+  }
+
   return (
     <div className="max-w-screen-2xl mx-auto w-full pb-10 -mt-24">
       <Card className="border-none drop-shadow-sm">
         <CardHeader className="gap-y-2 lg:flex-row lg:items-center lg:justify-between">
-          <CardTitle className="text-xl line-clamp-1">Transactions history</CardTitle>
-          <Button onClick={newTransaction.onOpen} size="sm">
-            <PlusIcon className="size-4 mr-2" />
-            Add new
-          </Button>
+          <CardTitle className="text-xl line-clamp-1">
+            Transactions history
+          </CardTitle>
+          <div className='flex items-center gap-x-2'>
+            <Button onClick={newTransaction.onOpen} size="sm" className='w-full'>
+              <PlusIcon className="size-4 mr-2" />
+              Add new
+            </Button>
+            <UploadButton onUpload={(data) => {}} />
+          </div>
         </CardHeader>
         <CardContent>
           <DataTable
