@@ -303,8 +303,9 @@ bun run dev
 
 commit: seed script
 
+bun add react-icons@^5.2.1
 
-
+commit: data grid + data-card skeleton & use-get-summary, react-icons
 ```
 
 ### Deployment
