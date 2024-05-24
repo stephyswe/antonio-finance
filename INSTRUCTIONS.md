@@ -291,6 +291,22 @@ commit: summary api
 commit: fix - summary.ts lastPeriod variable
 ```
 
+### Dashboard cards
+
+```
+clerk: dashboard - click user - copy userId
+edit scripts/seed.ts - line 12: SEED_USER_ID
+package.json - "db:seed": "bun ./scripts/seed.ts"
+
+bun run db:seed
+bun run dev
+
+commit: seed script
+
+
+
+```
+
 ### Deployment
 
 foreach
