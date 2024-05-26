@@ -314,6 +314,14 @@ bun add react-countup@^6.5.3
 commmit: dashboard cards with skeleton
 ```
 
+### Dashboard chart
+
+```
+bun add recharts@^2.12.7
+
+commit: add data-charts w recharts
+```
+
 ### Deployment
 
 foreach
