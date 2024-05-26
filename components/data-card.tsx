@@ -1,12 +1,17 @@
+import { VariantProps, cva } from "class-variance-authority";
+import { IconType } from "react-icons/lib";
+
 import {
   Card,
+  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { cn } from '@/lib/utils';
-import { VariantProps, cva } from "class-variance-authority";
-import { IconType } from "react-icons/lib";
+
+import { CountUp } from "@/components/count-up";
+
+import { cn, formatCurrency, formatPercentage } from "@/lib/utils";
 
 const boxVariant = cva("shrink-0 rounded-md p-3", {
   variants: {
@@ -58,7 +63,7 @@ export const DataCard = ({
   return (
     <Card className="border-none drop-shadow-sm">
       <CardHeader className="flex flex-row items-center justify-between gap-x-4">
-        <div className='space-y-2'>
+        <div className="space-y-2">
           <CardTitle className="text-2xl line-clamp-1">{title}</CardTitle>
           <CardDescription className="line-clamp-1">
             {dateRange}
@@ -68,6 +73,28 @@ export const DataCard = ({
           <Icon className={cn(iconVariant({ variant }))} />
         </div>
       </CardHeader>
+      <CardContent>
+        <h1 className="font-bold text-2xl mb-2 line-clamp-1 break-all">
+          <CountUp
+            preserveValue
+            start={0}
+            end={value}
+            decimals={2}
+            decimalPlaces={2}
+            formattingFn={formatCurrency}
+          />
+        </h1>
+        <p
+          className={cn(
+            "text-muted-foreground text-sm line-clamp-1",
+            percentageChange > 0 && "text-emerald-500",
+            percentageChange < 0 && "text-rose-500",
+            
+          )}
+        >
+          {formatPercentage(percentageChange)} from last period
+        </p>
+      </CardContent>
     </Card>
   );
 };
