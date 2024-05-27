@@ -324,6 +324,8 @@ commit: add data-charts w recharts
 bunx shadcn-ui@latest add separator
 
 commit: tooltip with income and expenses
+
+commit: dashboard chart - 3 chart types
 ```
 
 ### Deployment
