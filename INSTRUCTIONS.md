@@ -328,6 +328,12 @@ commit: tooltip with income and expenses
 commit: dashboard chart - 3 chart types
 ```
 
+### Dashboard pie
+
+```
+commit: pie chart
+```
+
 ### Deployment
 
 foreach
