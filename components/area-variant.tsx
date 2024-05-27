@@ -1,3 +1,4 @@
+import { CustomTooltip } from '@/components/custom-tooltip';
 import { format } from "date-fns";
 import {
   Area,
@@ -5,6 +6,7 @@ import {
   CartesianGrid,
   ResponsiveContainer,
   XAxis,
+  Tooltip
 } from "recharts";
 
 type Props = {
@@ -38,6 +40,7 @@ export const AreaVariant = ({ data }: Props) => {
           style={{ fontSize: "12px" }}
           tickMargin={16}
         />
+        <Tooltip content={<CustomTooltip />} />
         <Area
           type="monotone"
           dataKey="income"

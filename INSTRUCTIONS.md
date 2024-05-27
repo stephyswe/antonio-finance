@@ -320,6 +320,10 @@ commmit: dashboard cards with skeleton
 bun add recharts@^2.12.7
 
 commit: add data-charts w recharts
+
+bunx shadcn-ui@latest add separator
+
+commit: tooltip with income and expenses
 ```
 
 ### Deployment
