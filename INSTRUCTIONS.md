@@ -326,6 +326,10 @@ bunx shadcn-ui@latest add separator
 commit: tooltip with income and expenses
 
 commit: dashboard chart - 3 chart types
+
+commit: pie chart
+
+commit: dashboard chart - radial, radal variant + category tooltip
 ```
 
 ### Dashboard pie
