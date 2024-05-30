@@ -339,6 +339,14 @@ commit: dashboard chart - radial, radal variant + category tooltip
 commit: spending-pie-loading and chart-loading
 ```
 
+### Date & account filters
+
+```
+bun add query-string@^9.0.0
+
+commit: date & accounts filter - account filter skeleton
+```
+
 ### Deployment
 
 foreach
