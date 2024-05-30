@@ -347,6 +347,8 @@ bun add query-string@^9.0.0
 commit: date & accounts filter - account filter skeleton
 
 commit: filter account with select
+
+commit: date filter with react-day-picker
 ```
 
 ### Deployment
